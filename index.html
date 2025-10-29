@@ -11,7 +11,8 @@
             font-family: 'Noto Serif JP', serif;
         }
     </style>
-<link href="styles.css" rel="stylesheet"/> <script id="tailwind-config">
+<link href="styles.css" rel="stylesheet"/>
+<script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
         theme: {
@@ -70,6 +71,16 @@
         <button onclick="closeModal()" class="absolute top-4 right-4 text-white text-3xl z-10">&times;</button>
     </div>
 </div>
+
+<div id="odaVideoModal" class="fixed inset-0 z-[101] hidden items-center justify-center bg-black/90" onclick="closeOdaModal()">
+    <div class="relative w-full max-w-4xl mx-auto h-auto" onclick="event.stopPropagation()">
+        <video id="odaBushidoVideo" class="w-full h-full" controls preload="auto">
+            <source src="oda_nobunaga_video.mp4" type="video/mp4">
+            お使いのブラウザは動画タグをサポートしていません。
+        </video>
+        <button onclick="closeOdaModal()" class="absolute top-4 right-4 text-white text-3xl z-10">&times;</button>
+    </div>
+</div>
 <main>
 <div class="@container px-4 sm:px-10 py-10">
 <div class="flex min-h-[60vh] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 rounded-xl items-center justify-center p-4 text-center" data-alt="A silhouette of a samurai warrior holding a katana, with cherry blossom petals falling against a dark, moody background" style='background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.6) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAwHwack7th4lNLltDamitrsbjq0wdk76_Zd36MMIxukY07F3Xh_52DbVtQe6uLFSaoiBQZpcKZAffXsf1RuDORZ8hXbsXiHGn5B7YHFG68SStPM9JGlaawMN8W___fQuGt_PTYQYybpcXFO7kSN2_GxNCrbZQA1kSO9sgqLnlkmWFfiy9zG4e5-F6mzS23DxL785yAPbSZVngUUTpnDMhNQWscHHGllhNvtojo4w6UxRWubK5w7gEJA0_qkEGXm7ZPuKl3H5NMARU");'>
@@ -122,7 +133,7 @@
                                 </p>
 </div>
 <div class="grid grid-cols-1 @[640px]:grid-cols-2 @[960px]:grid-cols-3 gap-6">
-<a class="flex flex-col gap-4 group cursor-pointer" href="#">
+<a id="odaNobunagaLink" class="flex flex-col gap-4 group cursor-pointer" href="#">
 <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl overflow-hidden transition-transform duration-300 group-hover:scale-105" data-alt="A sumi-e style illustration of Oda Nobunaga in a dynamic pose, with a sense of ambition." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBuqzdYiA_jmdV_mccwVtnjPuAy4vLXya3kGnFQwyywhkFVyAXWkrv1ieJu4K90NpNjfO-F2yaFIri_k_55GXuALY4YU5lQrhLSpuLqK-jrm3mOfHicx-s0CmNWfY0xexn797r_ZAPI2d4sPaJ_fDpSBDwbMRFRJ5YK-Yy2kSDxzhkxGljAZNvtsIGtLh22j4_3xFm5nD2LS82oybIG1B6axCQF5bIzj-TMNUPtdL2XQt7v2ykp6Z__yAzd4G_idxPkz3xOFeMD71g");'></div>
 <div class="flex flex-col gap-1 px-2">
 <h3 class="text-xl font-bold leading-tight tracking-[-0.015em]">織田信長</h3>
@@ -171,45 +182,74 @@
 </div>
 </div>
 </div>
-
 <script>
+    // 既存の「詳しく見る」ボタンの処理
     const learnMoreButton = document.getElementById('learnMoreButton');
     const videoModal = document.getElementById('videoModal');
     const bushidoVideo = document.getElementById('bushidoVideo');
     const anecdotesSection = document.getElementById('bushidoAnecdotes');
 
-    // モーダルを閉じる関数
+    // 新規：織田信長関連の要素を取得
+    const odaNobunagaLink = document.getElementById('odaNobunagaLink');
+    const odaVideoModal = document.getElementById('odaVideoModal');
+    const odaBushidoVideo = document.getElementById('odaBushidoVideo');
+
+    // 既存：竹切り動画モーダルを閉じる関数
     function closeModal() {
         bushidoVideo.pause();
         videoModal.classList.add('hidden');
         videoModal.classList.remove('flex');
     }
 
-    // 「詳しく見る」ボタンクリック時の処理
+    // 新規：織田信長動画モーダルを閉じる関数
+    function closeOdaModal() {
+        odaBushidoVideo.pause();
+        odaVideoModal.classList.add('hidden');
+        odaVideoModal.classList.remove('flex');
+    }
+
+    // 既存：「詳しく見る」ボタンクリック時の処理
     learnMoreButton.addEventListener('click', () => {
-        // モーダルを表示
         videoModal.classList.remove('hidden');
         videoModal.classList.add('flex');
-        // 動画を最初から再生
         bushidoVideo.currentTime = 0;
         bushidoVideo.play();
     });
 
-    // 動画再生終了時のイベントリスナー
+    // 新規：織田信長リンククリック時の処理
+    odaNobunagaLink.addEventListener('click', (e) => {
+        e.preventDefault(); // リンクへの遷移を防ぐ
+        odaVideoModal.classList.remove('hidden');
+        odaVideoModal.classList.add('flex');
+        odaBushidoVideo.currentTime = 0;
+        odaBushidoVideo.play();
+    });
+
+    // 既存：竹切り動画再生終了時のイベントリスナー
     bushidoVideo.addEventListener('ended', () => {
         closeModal();
-        // 「武士の逸話」セクションへスムーススクロール
         if (anecdotesSection) {
             anecdotesSection.scrollIntoView({ behavior: 'smooth' });
         }
     });
 
-    // Escキーでモーダルを閉じる
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && !videoModal.classList.contains('hidden')) {
-            closeModal();
-        }
+    // 新規：信長動画再生終了時の処理
+    odaBushidoVideo.addEventListener('ended', () => {
+        closeOdaModal();
     });
 
+    // Escキーでモーダルを閉じる
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            // 竹切り動画モーダルがアクティブなら閉じる
+            if (!videoModal.classList.contains('hidden')) {
+                closeModal();
+            }
+            // 信長動画モーダルがアクティブなら閉じる
+            if (!odaVideoModal.classList.contains('hidden')) {
+                closeOdaModal();
+            }
+        }
+    });
 </script>
 </body></html>
