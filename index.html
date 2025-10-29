@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html class="dark" lang="ja"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>武士道 - 静寂に宿る、武士の魂</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Noto Serif JP', serif;
+        }
+    </style>
+<link href="styles.css" rel="stylesheet"/> <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#d41132",
+              "background-light": "#f8f6f6",
+              "background-dark": "#1C1C1C",
+              "text-light": "#1C1C1C",
+              "text-dark": "#F3F3F3",
+              "accent-light": "#3a3a3a",
+              "accent-dark": "#c9929b",
+              "border-light": "#e0e0e0",
+              "border-dark": "#482329"
+            },
+            fontFamily: {
+              "display": ["Noto Serif JP", "serif"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark font-display">
+<div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="flex flex-1 justify-center">
+<div class="layout-content-container flex flex-col w-full max-w-[1200px] flex-1">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-border-light dark:border-border-dark px-10 py-4 sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
+<div class="flex items-center gap-4 text-text-light dark:text-text-dark">
+<div class="w-8 h-8 flex items-center justify-center">
+<svg fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M13.8261 17.4264C16.7203 18.1174 20.2244 18.5217 24 18.5217C27.7756 18.5217 31.2797 18.1174 34.1739 17.4264C36.9144 16.7722 39.9967 15.2331 41.3563 14.1648L24.8486 40.6391C24.4571 41.267 23.5429 41.267 23.1514 40.6391L6.64374 14.1648C8.00331 15.2331 11.0856 16.7722 13.8261 17.4264Z"></path>
+<path clip-rule="evenodd" d="M39.998 12.236C39.9944 12.2537 39.9875 12.2845 39.9748 12.3294C39.9436 12.4399 39.8949 12.5741 39.8346 12.7175C39.8168 12.7597 39.7989 12.8007 39.7813 12.8398C38.5103 13.7113 35.9788 14.9393 33.7095 15.4811C30.9875 16.131 27.6413 16.5217 24 16.5217C20.3587 16.5217 17.0125 16.131 14.2905 15.4811C12.0012 14.9346 9.44505 13.6897 8.18538 12.8168C8.17384 12.7925 8.16216 12.767 8.15052 12.7408C8.09919 12.6249 8.05721 12.5114 8.02977 12.411C8.00356 12.3152 8.00039 12.2667 8.00004 12.2612C8.00004 12.261 8 12.2607 8.00004 12.2612C8.00004 12.2359 8.0104 11.9233 8.68485 11.3686C9.34546 10.8254 10.4222 10.2469 11.9291 9.72276C14.9242 8.68098 19.1919 8 24 8C28.8081 8 33.0758 8.68098 36.0709 9.72276C37.5778 10.2469 38.6545 10.8254 39.3151 11.3686C39.9006 11.8501 39.9857 12.1489 39.998 12.236ZM4.95178 15.2312L21.4543 41.6973C22.6288 43.5809 25.3712 43.5809 26.5457 41.6973L43.0534 15.223C43.0709 15.1948 43.0878 15.1662 43.104 15.1371L41.3563 14.1648C43.104 15.1371 43.1038 15.1374 43.104 15.1371L43.1051 15.135L43.1065 15.1325L43.1101 15.1261L43.1199 15.1082C43.1276 15.094 43.1377 15.0754 43.1497 15.0527C43.1738 15.0075 43.2062 14.9455 43.244 14.8701C43.319 14.7208 43.4196 14.511 43.5217 14.2683C43.6901 13.8679 44 13.0689 44 12.2609C44 10.5573 43.003 9.22254 41.8558 8.2791C40.6947 7.32427 39.1354 6.55361 37.385 5.94477C33.8654 4.72057 29.133 4 24 4C18.867 4 14.1346 4.72057 10.615 5.94478C8.86463 6.55361 7.30529 7.32428 6.14419 8.27911C4.99695 9.22255 3.99999 10.5573 3.99999 12.2609C3.99999 13.1275 4.29264 13.9078 4.49321 14.3607C4.60375 14.6102 4.71348 14.8196 4.79687 14.9689C4.83898 15.0444 4.87547 15.1065 4.9035 15.1529C4.91754 15.1762 4.92954 15.1957 4.93916 15.2111L4.94662 15.223L4.95178 15.2312ZM35.9868 18.996L24 38.22L12.0131 18.996C12.4661 19.1391 12.9179 19.2658 13.3617 19.3718C16.4281 20.1039 20.0901 20.5217 24 20.5217C27.9099 20.5217 31.5719 20.1039 34.6383 19.3718C35.082 19.2658 35.5339 19.1391 35.9868 18.996Z" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-xl font-bold leading-tight tracking-[-0.015em]">武士道</h2>
+</div>
+<nav class="flex flex-1 justify-end gap-2">
+<div class="flex items-center gap-2">
+<a class="text-sm font-medium leading-normal px-4 py-2 rounded-lg hover:bg-black/10 dark:hover:bg-white/10 transition-colors" href="#">歴史</a>
+<a class="text-sm font-medium leading-normal px-4 py-2 rounded-lg hover:bg-black/10 dark:hover:bg-white/10 transition-colors" href="#">文化</a>
+<a class="text-sm font-medium leading-normal px-4 py-2 rounded-lg hover:bg-black/10 dark:hover:bg-white/10 transition-colors" href="#">武具</a>
+<a class="text-sm font-medium leading-normal px-4 py-2 rounded-lg hover:bg-black/10 dark:hover:bg-white/10 transition-colors" href="#">ギャラリー</a>
+</div>
+</nav>
+</header>
+
+<div id="videoModal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/90" onclick="closeModal()">
+    <div class="relative w-full max-w-4xl mx-auto h-auto" onclick="event.stopPropagation()">
+        <video id="bushidoVideo" class="w-full h-full" controls preload="auto">
+            <source src="video.mp4" type="video/mp4">
+            お使いのブラウザは動画タグをサポートしていません。
+        </video>
+        <button onclick="closeModal()" class="absolute top-4 right-4 text-white text-3xl z-10">&times;</button>
+    </div>
+</div>
+<main>
+<div class="@container px-4 sm:px-10 py-10">
+<div class="flex min-h-[60vh] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 rounded-xl items-center justify-center p-4 text-center" data-alt="A silhouette of a samurai warrior holding a katana, with cherry blossom petals falling against a dark, moody background" style='background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.6) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAwHwack7th4lNLltDamitrsbjq0wdk76_Zd36MMIxukY07F3Xh_52DbVtQe6uLFSaoiBQZpcKZAffXsf1RuDORZ8hXbsXiHGn5B7YHFG68SStPM9JGlaawMN8W___fQuGt_PTYQYybpcXFO7kSN2_GxNCrbZQA1kSO9sgqLnlkmWFfiy9zG4e5-F6mzS23DxL785yAPbSZVngUUTpnDMhNQWscHHGllhNvtojo4w6UxRWubK5w7gEJA0_qkEGXm7ZPuKl3H5NMARU");'>
+<div class="flex flex-col gap-2">
+<h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-6xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">
+                                        静寂に宿る、武士の魂
+                                    </h1>
+<h2 class="text-gray-200 text-base font-normal leading-normal @[480px]:text-lg @[480px]:font-normal @[480px]:leading-normal">
+                                        日本の歴史と文化に触れる旅へ
+                                    </h2>
+</div>
+<button id="learnMoreButton" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors shadow-lg shadow-primary/30">
+<span class="truncate">詳しく見る</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col gap-10 px-4 sm:px-10 py-10 @container">
+<div class="flex flex-col gap-4 text-center items-center">
+<h1 class="tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]">
+                                    武士道とは
+                                </h1>
+<p class="text-base font-normal leading-normal max-w-[720px] text-accent-light dark:text-accent-dark">
+                                    武士道は、日本の封建時代における武士階級の倫理規定であり、道徳的な規範です。義、勇、仁、礼、誠、名誉、忠義を重んじ、自己の克己と他者への奉仕を説きます。
+                                </p>
+</div>
+<div class="grid grid-cols-1 @[640px]:grid-cols-2 gap-6">
+<div class="flex flex-col gap-4 pb-3">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl" data-alt="A serene Japanese garden with cherry blossoms in full bloom during spring, representing the Japanese sense of beauty." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAKb9soofeVzPrsyZa4OrqO6FrZ0qCKgF7G08e7Tw-CKDTuw-CxfGX7koLJHkoGObYnRUZ-Hig2Uyna3HYrlJwGnK3417TmHKhPHXbUDHUiFxORQnaezRaD5SUlmHeebZ8me5cGN-uw1vEIC0-5F9u4vOUiP4KoxxmT_BCxZifzuTkTh4BT6Eh_i7-k7hL84g3JkCVj265dsOLaMF4w1kpWeyK2gjlW8hTt0RuOLqJ-VQ6gSQQbItPHfVxWGtEp5jrR9zDMwtA-e88");'></div>
+<div class="px-2">
+<p class="text-lg font-bold leading-normal">日本の四季と美意識</p>
+<p class="text-sm font-normal leading-normal text-accent-light dark:text-accent-dark">季節の移ろいの中に美を見出し、それを生活や芸術に取り入れてきた日本人の感性を探ります。</p>
+</div>
+</div>
+<div class="flex flex-col gap-4 pb-3">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl" data-alt="Close-up of a Japanese swordsmith hammering a glowing red-hot piece of metal, showing sparks flying." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC4TlQe_bxMU--rY3j3ci8i6_9oJdJPe_-u6F1iHPiDxMAzWjVQ2J46ikS3qgqgGp2KC1ydyizXqX8SHhMDFp4wytOwzK36iMzuxQu8gVtgkejW9kaAjw8161g3GycX8eG4D71GFHta3LT_ecSkCfn5pDeSI6nGjPYTKU_9Cj1gjnnxQTpigqpJ_FmJFgMirK6G_U08t4DigkrMD8KGs1bS89vISLPfpVx05X206Xo0Xetd1evmjxHSc1hFFIb-Ay6xQGReGKRMk_Q");'></div>
+<div class="px-2">
+<p class="text-lg font-bold leading-normal">鍛錬の風景</p>
+<p class="text-sm font-normal leading-normal text-accent-light dark:text-accent-dark">精神と肉体を鍛え上げる、日本刀の鍛錬。その厳かな過程を映像でご覧ください。</p>
+</div>
+</div>
+</div>
+</div>
+<div id="bushidoAnecdotes" class="flex flex-col gap-10 px-4 sm:px-10 py-10 @container">
+<div class="flex flex-col gap-4 text-center items-center">
+<h1 class="tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]">
+                                    武士の逸話
+                                </h1>
+<p class="text-base font-normal leading-normal max-w-[720px] text-accent-light dark:text-accent-dark">
+                                    歴史に名を刻んだ武士たちの、人間味あふれる逸話や伝説をご紹介します。
+                                </p>
+</div>
+<div class="grid grid-cols-1 @[640px]:grid-cols-2 @[960px]:grid-cols-3 gap-6">
+<a class="flex flex-col gap-4 group cursor-pointer" href="#">
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl overflow-hidden transition-transform duration-300 group-hover:scale-105" data-alt="A sumi-e style illustration of Oda Nobunaga in a dynamic pose, with a sense of ambition." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBuqzdYiA_jmdV_mccwVtnjPuAy4vLXya3kGnFQwyywhkFVyAXWkrv1ieJu4K90NpNjfO-F2yaFIri_k_55GXuALY4YU5lQrhLSpuLqK-jrm3mOfHicx-s0CmNWfY0xexn797r_ZAPI2d4sPaJ_fDpSBDwbMRFRJ5YK-Yy2kSDxzhkxGljAZNvtsIGtLh22j4_3xFm5nD2LS82oybIG1B6axCQF5bIzj-TMNUPtdL2XQt7v2ykp6Z__yAzd4G_idxPkz3xOFeMD71g");'></div>
+<div class="flex flex-col gap-1 px-2">
+<h3 class="text-xl font-bold leading-tight tracking-[-0.015em]">織田信長</h3>
+<p class="text-sm font-normal leading-normal text-accent-light dark:text-accent-dark">
+                                            天下布武を掲げ、旧来の権威を打破した革命児。その革新的な政策と非情な決断の裏に隠された逸話。
+                                        </p>
+</div>
+</a>
+<a class="flex flex-col gap-4 group cursor-pointer" href="#">
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl overflow-hidden transition-transform duration-300 group-hover:scale-105" data-alt="A sumi-e style illustration of Toyotomi Hideyoshi, depicted with a resourceful and cheerful expression." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAg1u3YKAuhDrgU6zvQpPULelDFGDlytx1sSOL3oFaQvmJ7mg9OJ9xiOq6J_Udue3jjOef_ep_5_mV67DPMgfWUOk70KueLhkyXJ32IPFaQvj7c_5KTOeaEdfLskZLfcHgpRVACgKrTtiINiZIR9Bjh2bIOYZxx7OM84gyDLQI0cFNc4oogEuBoYqDKsGoYOQRpwRxA7wCdRH3SSqtpiNqTthFxsmo-mmkSuZDBfLm3rarmYBLvhWDJ_ZUyC4JoNDzvM8rwLivyFaI");'></div>
+<div class="flex flex-col gap-1 px-2">
+<h3 class="text-xl font-bold leading-tight tracking-[-0.015em]">豊臣秀吉</h3>
+<p class="text-sm font-normal leading-normal text-accent-light dark:text-accent-dark">
+                                            農民から天下人へと駆け上がった稀代の出世頭。人たらしと言われた彼の機知に富んだ逸話の数々。
+                                        </p>
+</div>
+</a>
+<a class="flex flex-col gap-4 group cursor-pointer" href="#">
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl overflow-hidden transition-transform duration-300 group-hover:scale-105" data-alt="A sumi-e style illustration of Tokugawa Ieyasu, portrayed with a patient and profound gaze." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDrINbJ5fTC1bN3ajAIkNUgdO3-TZPxZn6QpwmuaFyJaBkcyrKTBKpFMWt6AvKTccPZ8WfD-lwoqkqsvUuk0Zmu6W1oBt98oczR0fSUhFVGBwTPGGEawnzw9sklYt5ODMEzpzd7dSN5h4sIav_Ql4aF0AlJie776TjdQfTZhhUWa-zGjqnxcSl-MX9Hcb6XdqOkIoC60l1I7iyn7TDwT03caV1ewLOm2K6d7Eo6hRbVMGTl3IacpV4ECmy5fPLonrLMOHwMm4JWUgU");'></div>
+<div class="flex flex-col gap-1 px-2">
+<h3 class="text-xl font-bold leading-tight tracking-[-0.015em]">徳川家康</h3>
+<p class="text-sm font-normal leading-normal text-accent-light dark:text-accent-dark">
+                                            長き戦乱の世を終わらせ、江戸幕府を開いた大御所。忍耐と深謀遠慮に満ちた彼の生涯を物語る逸話。
+                                        </p>
+</div>
+</a>
+</div>
+</div>
+</main>
+<footer class="flex flex-col gap-8 px-5 py-16 text-center @container border-t border-border-light dark:border-border-dark mt-10">
+<div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
+<a class="text-accent-light dark:text-accent-dark text-sm font-normal leading-normal min-w-40 hover:text-primary transition-colors" href="#">プライバシーポリシー</a>
+<a class="text-accent-light dark:text-accent-dark text-sm font-normal leading-normal min-w-40 hover:text-primary transition-colors" href="#">お問い合わせ</a>
+</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="text-accent-light dark:text-accent-dark hover:text-primary transition-colors" href="#">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+</a>
+<a class="text-accent-light dark:text-accent-dark hover:text-primary transition-colors" href="#">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+</a>
+</div>
+<p class="text-accent-light dark:text-accent-dark text-xs font-normal leading-normal">© 2024 Bushido Legacy. All rights reserved.</p>
+</footer>
+</div>
+</div>
+</div>
+</div>
+
+<script>
+    const learnMoreButton = document.getElementById('learnMoreButton');
+    const videoModal = document.getElementById('videoModal');
+    const bushidoVideo = document.getElementById('bushidoVideo');
+    const anecdotesSection = document.getElementById('bushidoAnecdotes');
+
+    // モーダルを閉じる関数
+    function closeModal() {
+        bushidoVideo.pause();
+        videoModal.classList.add('hidden');
+        videoModal.classList.remove('flex');
+    }
+
+    // 「詳しく見る」ボタンクリック時の処理
+    learnMoreButton.addEventListener('click', () => {
+        // モーダルを表示
+        videoModal.classList.remove('hidden');
+        videoModal.classList.add('flex');
+        // 動画を最初から再生
+        bushidoVideo.currentTime = 0;
+        bushidoVideo.play();
+    });
+
+    // 動画再生終了時のイベントリスナー
+    bushidoVideo.addEventListener('ended', () => {
+        closeModal();
+        // 「武士の逸話」セクションへスムーススクロール
+        if (anecdotesSection) {
+            anecdotesSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+
+    // Escキーでモーダルを閉じる
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !videoModal.classList.contains('hidden')) {
+            closeModal();
+        }
+    });
+
+</script>
+</body></html>
