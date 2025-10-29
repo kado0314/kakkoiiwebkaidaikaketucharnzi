@@ -1,0 +1,11 @@
+/* styles.css */
+/* cursor.png をカスタムカーソルとして設定 */
+/* 16 16 はカーソルのホットスポット（クリック位置）を画像の中心付近に設定 */
+body {
+    cursor: url('cursor.png') 16 16, auto;
+}
+
+/* リンクやボタンなど、クリック可能要素でもカスタムカーソルを維持 */
+button, a, .cursor-pointer {
+    cursor: url('cursor.png') 16 16, pointer !important;
+}
